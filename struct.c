@@ -48,8 +48,8 @@ int main()
 {
     char make[] = "Ram";
     char model[] = "1500";
-    size_t makeSize = sizeof(make);
-    size_t modelSize = sizeof(model);
+    size_t makeSize = strlen(make) + 1;
+    size_t modelSize = strlen(model) + 1;
     struct vehicle_t ourTruck = new_vehicle(4, Gasoline, Automatic, 15.5, 2016, make, makeSize, model, modelSize, true);
     printf("%s\n", ourTruck.model); // 1500
     return 0;

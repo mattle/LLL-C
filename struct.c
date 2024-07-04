@@ -2,7 +2,8 @@
 #include <stdbool.h>
 #include <string.h>
 
-enum fuel{
+enum fuel
+{
     Gasoline,
     Diesel,
     Hydrogen,
@@ -11,12 +12,14 @@ enum fuel{
     Nuclear
 };
 
-enum transmission{
+enum transmission
+{
     Manual,
     Automatic
 };
 
-struct vehicle_t{
+struct vehicle_t
+{
     int wheels;
     enum fuel fuel;
     enum transmission transmission;
@@ -27,7 +30,8 @@ struct vehicle_t{
     bool registered;
 };
 
-struct vehicle_t new_vehicle(int wheels, enum fuel fuel, enum transmission transmission, float mpg, int year, char make[], char model[], bool registered){
+struct vehicle_t new_vehicle(int wheels, enum fuel fuel, enum transmission transmission, float mpg, int year, char make[], char model[], bool registered)
+{
     struct vehicle_t vehicle;
     vehicle.wheels = wheels;
     vehicle.fuel = fuel;
@@ -40,9 +44,9 @@ struct vehicle_t new_vehicle(int wheels, enum fuel fuel, enum transmission trans
     return vehicle;
 }
 
-int main(){
+int main()
+{
     struct vehicle_t ourTruck = new_vehicle(4, Gasoline, Automatic, 15.5, 2016, "Ram", "1500", true);
-    printf("%s\n",ourTruck.model); // 1500
+    printf("%s\n", ourTruck.model); // 1500
     return 0;
 }
-

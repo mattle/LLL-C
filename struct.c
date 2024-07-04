@@ -38,8 +38,16 @@ struct vehicle_t new_vehicle(int wheels, enum fuel fuel, enum transmission trans
     vehicle.transmission = transmission;
     vehicle.mpg = mpg;
     vehicle.year = year;
-    memcpy(vehicle.make, make, makeSize);
-    memcpy(vehicle.model, model, modelSize);
+    if(makeSize <= sizeof(vehicle.make)){
+        memcpy(vehicle.make, make, makeSize);
+    } else {
+        memcpy(vehicle.make, make, sizeof(vehicle.make));
+    }
+    if(modelSize <= sizeof(vehicle.model)){
+        memcpy(vehicle.model, model, modelSize);
+    } else {
+        memcpy(vehicle.model, model, sizeof(vehicle.model));
+    }
     vehicle.registered = registered;
     return vehicle;
 }

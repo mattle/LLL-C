@@ -1,3 +1,3 @@
-Just me going through the Low Level Learning course on C.
+Just me going through the Low Level Academy course on C.
 
 https://lowlevel.academy/

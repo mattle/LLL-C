@@ -34,8 +34,8 @@ struct vehicle_t new_vehicle(int wheels, enum fuel fuel, enum transmission trans
     vehicle.transmission = transmission;
     vehicle.mpg = mpg;
     vehicle.year = year;
-    size_t lengthMake = strlcpy(vehicle.make, make, sizeof(vehicle.make));
-    size_t lengthModel = strlcpy(vehicle.model, model, sizeof(vehicle.model));
+    memcpy(vehicle.make, make, sizeof(vehicle.make));
+    memcpy(vehicle.model, model, sizeof(vehicle.model));
     vehicle.registered = registered;
     return vehicle;
 }

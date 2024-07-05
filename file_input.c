@@ -7,12 +7,12 @@
 
 struct database_header_t{
     unsigned short version;
-    unsigned short empoyees;
-    unsigned int fileLength;
+    unsigned short employees;
+    unsigned int fileSize;
 };
 
 int main(int argc, char *argv[]){
-    struct database_header_t head = {0};
+    struct database_header_t head;
     if(argc != 2){
         printf("Usage: %s <filename>\n", argv[0]);
         return 0;
@@ -21,9 +21,15 @@ int main(int argc, char *argv[]){
     if(fd == -1){
         perror("open");
         return -1;
+    }    
+    if(read(fd, &head, sizeof(head)) != sizeof(head)){
+        perror("read");
+        close(fd);
+        return -1;
     }
-    char *fileData = "Hot Chocolate!\n";
-    write(fd, fileData, strlen(fileData));
+    printf("DB Version: %u\n", head.version);
+    printf("DB Number of Employees: %u\n", head.employees);
+    printf("DB File Length: %u\n", head.fileSize);
     close(fd);    
     return 0;
 }

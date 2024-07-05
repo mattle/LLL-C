@@ -1,12 +1,10 @@
 #include <stdio.h>
-#include <string.h>
 
 // something is wrong here :(
 int swap( int *a, int *b) {
-    int temp;
-    temp = *a;
-    *a = *b;
-    *b = temp;
+    *a = *a + *b; // *a = 30 *b = 20
+    *b = *a - *b; // *a = 30 *b = 10
+    *a = *a - *b; // *a = 20 *b = 10
 }
 int main() {
     int x = 10, y = 20;

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// something is wrong here :(
+// something is right here! :)
 int swap( int *a, int *b) {
     *a = *a + *b; // *a = 30 *b = 20
     *b = *a - *b; // *a = 30 *b = 10

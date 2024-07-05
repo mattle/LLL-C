@@ -12,6 +12,7 @@ struct database_header_t{
 };
 
 int main(int argc, char *argv[]){
+    struct database_header_t head = {0};
     if(argc != 2){
         printf("Usage: %s <filename>\n", argv[0]);
         return 0;

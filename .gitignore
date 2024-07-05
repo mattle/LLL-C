@@ -52,5 +52,3 @@ Mkfile.old
 dkms.conf
 
 # Excluded Directories
-bin/*
-db/*

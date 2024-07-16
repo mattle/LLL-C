@@ -15,5 +15,6 @@ int main(int argc, char *argv[]){
     printf("ppOne: %p\n",ppOne); // the address of pOne
     printf("*ppOne: %p\n",*ppOne); // dereference ppOne to get the value of pOne
     printf("**ppOne: %d\n\n",**ppOne); // dereference ppOne twice to get the value of one
+    
     return 0;
 }
